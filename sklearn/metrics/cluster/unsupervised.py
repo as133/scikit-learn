@@ -13,6 +13,7 @@ import numpy as np
 
 from ...utils import check_random_state
 from ...utils import check_X_y
+from ...utils import deprecated
 from ...utils import safe_indexing
 from ..pairwise import pairwise_distances_chunked
 from ..pairwise import pairwise_distances
@@ -236,8 +237,8 @@ def silhouette_samples(X, labels, metric='euclidean', **kwds):
     return np.nan_to_num(sil_samples)
 
 
-def calinski_harabaz_score(X, labels):
-    """Compute the Calinski and Harabaz score.
+def calinski_harabasz_score(X, labels):
+    """Compute the Calinski and Harabasz score.
 
     It is also known as the Variance Ratio Criterion.
 
@@ -258,7 +259,7 @@ def calinski_harabaz_score(X, labels):
     Returns
     -------
     score : float
-        The resulting Calinski-Harabaz score.
+        The resulting Calinski-Harabasz score.
 
     References
     ----------
@@ -286,6 +287,13 @@ def calinski_harabaz_score(X, labels):
     return (1. if intra_disp == 0. else
             extra_disp * (n_samples - n_labels) /
             (intra_disp * (n_labels - 1.)))
+
+
+@deprecated("Function 'calinski_harabaz_score' was renamed to "
+            "'calinski_harabasz_score' in version 0.20 and will be "
+            "removed in release 0.22.")
+def calinski_harabaz_score(X, labels):
+    return (calinski_harabasz_score(X, labels))
 
 
 def davies_bouldin_score(X, labels):

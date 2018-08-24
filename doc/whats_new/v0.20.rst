@@ -661,6 +661,8 @@ Support for Python 3.3 has been officially dropped.
   ``working_memory`` config. See :ref:`working_memory`. :issue:`10280` by `Joel
   Nothman`_ and :user:`Aman Dalmia <dalmia>`.
 
+- |API| Deprecate :func:`metrics.cluster.calinski_harabaz_score` and remove
+  in version 0.22. Renamed to :func:`metrics.cluster.calinski_harabaz_score`.
 
 :mod:`sklearn.mixture`
 ......................

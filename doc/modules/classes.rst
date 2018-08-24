@@ -903,7 +903,7 @@ details.
 
    metrics.adjusted_mutual_info_score
    metrics.adjusted_rand_score
-   metrics.calinski_harabaz_score
+   metrics.calinski_harabasz_score
    metrics.davies_bouldin_score
    metrics.completeness_score
    metrics.cluster.contingency_matrix
